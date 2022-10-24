@@ -1,3 +1,3 @@
 services:
-  ffc-template-node:
+  ffc-techspike-customer-registry-event:
     command: npm run start:debug

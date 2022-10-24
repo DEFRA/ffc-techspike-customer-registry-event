@@ -1,10 +1,14 @@
 services:
-  ffc-template-node:
+  ffc-techspike-customer-registry-event:
     build:
       context: .
       target: production
-    image: ffc-template-node
-    container_name: ffc-template-node
+    image: ffc-techspike-customer-registry-event
+    container_name: ffc-techspike-customer-registry-event
     environment:
-      APPINSIGHTS_CLOUDROLE: ffc-template-node-local
+      APPINSIGHTS_CLOUDROLE: ffc-techspike-customer-registry-data-consumer-local
       APPINSIGHTS_INSTRUMENTATIONKEY: ${APPINSIGHTS_INSTRUMENTATIONKEY}
+      EVENTREQUEST_QUEUE_ADDRESS: ${EVENTREQUEST_QUEUE_ADDRESS:-ffc-techspike-customer-registry-event}${MESSAGE_QUEUE_SUFFIX}
+      MESSAGE_QUEUE_HOST: ${MESSAGE_QUEUE_HOST}
+      MESSAGE_QUEUE_PASSWORD: ${MESSAGE_QUEUE_PASSWORD}
+      MESSAGE_QUEUE_USER: ${MESSAGE_QUEUE_USER}

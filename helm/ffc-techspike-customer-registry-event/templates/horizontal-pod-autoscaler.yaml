@@ -1,0 +1,18 @@
+
+{{- include "ffc-helm-library.horizontal-pod-autoscaler" (list . "ffc-techspike-customer-registry-event.horizontal-pod-autoscaler") -}}
+{{- define "ffc-techspike-customer-registry-event.horizontal-pod-autoscaler" -}}
+spec:
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: {{ .Values.deployment.cpuThreshold }}
+  - type: Resource
+    resource:
+      name: memory
+      target:
+        type: Utilization
+        averageUtilization: {{ .Values.deployment.memoryThreshold }}
+{{- end -}}

@@ -1,8 +1,8 @@
 {
-  "name": "ffc-template-node",
+  "name": "ffc-techspike-customer-registry-event",
   "version": "0.1.0",
-  "description": "description-of-project-goes-here",
-  "homepage": "https://github.com/DEFRA/ffc-template-node",
+  "description": "Save events from customer registry",
+  "homepage": "https://github.com/DEFRA/ffc-techspike-customer-registry-event",
   "main": "app/index.js",
   "scripts": {
     "pretest": "npm run test:lint",
@@ -17,8 +17,9 @@
   "contributors": [],
   "license": "OGL-UK-3.0",
   "dependencies": {
-    "@hapi/hapi": "^20.2.1",
-    "applicationinsights": "^2.2.1"
+    "@hapi/hapi": "^19.1.1",
+    "applicationinsights": "^2.2.1",
+    "ffc-messaging": "2.5.1"
   },
   "devDependencies": {
     "jest": "^27.5.1",

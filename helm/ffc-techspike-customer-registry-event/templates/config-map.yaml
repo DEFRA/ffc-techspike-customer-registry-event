@@ -1,0 +1,9 @@
+{{- include "ffc-helm-library.container-config-map" (list . "ffc-techspike-customer-registry-event.config-map") -}}
+{{- define "ffc-techspike-customer-registry-event.config-map" -}}
+data:
+  NODE_ENV: {{ quote .Values.environment }}
+  PORT: {{ quote .Values.container.port }}
+  APPINSIGHTS_CLOUDROLE: {{ quote .Values.name }}
+  EVENTREQUEST_QUEUE_ADDRESS: {{ quote .Values.container.eventRequestQueueAddress }}
+  MESSAGE_QUEUE_HOST: {{ quote .Values.container.messageQueueHost }}
+{{- end -}}

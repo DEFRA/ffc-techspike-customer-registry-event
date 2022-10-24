@@ -1,8 +1,8 @@
 environment: development
-name: ffc-template-node
-namespace: ffc-demo
-workstream: ffc-demo
-image: ffc-template-node
+name: ffc-techspike-customer-registry-event
+namespace: ffc-techspike
+workstream: ffc-techspike
+image: ffc-techspike-customer-registry-event
 
 labels: {}
 
@@ -10,10 +10,10 @@ appInsights:
   key:
 
 containerConfigMap:
-  name: ffc-template-node-config-map
+  name: ffc-techspike-customer-registry-event-config-map
 
 containerSecret:
-  name: ffc-template-node-container-secret
+  name: ffc-techspike-customer-registry-event-container-secret
   type: Opaque
 
 deployment:
@@ -23,6 +23,8 @@ deployment:
   minReadySeconds: 0
 
 container:
+  eventRequestQueueAddress: ffc-techspike-customer-registry-event
+  messageQueueHost: namespace.servicebus.windows.net
   imagePullPolicy: IfNotPresent
   requestMemory: 10Mi
   requestCpu: 10m

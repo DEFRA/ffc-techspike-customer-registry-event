@@ -1,0 +1,8 @@
+{{- include "ffc-helm-library.deployment" (list . "ffc-techspike-customer-registry-event.deployment") -}}
+{{- define "ffc-techspike-customer-registry-event.deployment" -}}
+spec:
+  template:
+    spec:
+      containers:
+      - {{ include "ffc-helm-library.container" (list . "ffc-techspike-customer-registry-event.container") }}
+{{- end -}}
