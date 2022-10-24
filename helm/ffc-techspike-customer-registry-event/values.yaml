@@ -6,8 +6,14 @@ image: ffc-techspike-customer-registry-event
 
 labels: {}
 
+aadPodIdentity: true
+
 appInsights:
   key:
+
+azureIdentity:
+  clientID:
+  resourceID:
 
 containerConfigMap:
   name: ffc-techspike-customer-registry-event-config-map
