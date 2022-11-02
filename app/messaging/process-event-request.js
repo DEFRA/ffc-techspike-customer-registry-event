@@ -3,7 +3,7 @@ const saveEvent = require('../event/save-event')
 
 const processEventRequest = async (message, receiver) => {
   try {
-    const messageBody = message.body
+    const messageBody = message.body.event
     console.log('Received event request', messageBody)
     if (validateEvent(messageBody)) {
       await saveEvent(messageBody)

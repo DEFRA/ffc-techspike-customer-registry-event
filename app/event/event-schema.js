@@ -3,7 +3,7 @@ const joi = require('joi')
 const eventSchema = joi.object({
   name: joi.string().required(),
   properties: joi.object({
-    sbi: joi.string().required(),
+    sbi: joi.number().required(),
     checkpoint: joi.string().required(),
     status: joi.string().required(),
     action: joi.object({
