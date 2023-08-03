@@ -21,7 +21,7 @@
     "@azure/data-tables": "^13.0.1",
     "@hapi/hapi": "^19.1.1",
     "applicationinsights": "^2.2.1",
-    "ffc-messaging": "2.5.1"
+    "ffc-messaging": "2.7.0"
   },
   "devDependencies": {
     "jest": "^27.5.1",
